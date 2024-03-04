@@ -1,15 +1,31 @@
 {
   "name": "helloworld",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Electron Hello World App",
   "main": "main.js",
   "scripts": {
-    "start": "electron ./main.js"
+    "start": "electron ./main.js",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "productName": "HelloElectron",
+    "appId": "com.company.hello-electron-app",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": "deb"
+    }
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Ubuntu Desktop",
+    "email": "ubuntu.desktop@email.com"
+  },
   "license": "MIT",
   "devDependencies": {
-    "electron": "^29.0.1"
+    "electron": "^29.0.1",
+    "electron-builder": "^24.12.0"
   }
 }
